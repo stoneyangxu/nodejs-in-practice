@@ -1,0 +1,13 @@
+{
+  "name": "restful",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

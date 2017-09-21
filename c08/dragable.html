@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        #members li {
+            cursor: move;
+        }
+
+        .highlighted {
+            background-color: yellow;
+        }
+
+        .validtarget {
+            background-color: lightblue;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        const racers = []
+        const volunteers = []
+
+        var racersList
+        var volunteersList
+
+        function loadDemo() {
+            racersList = document.getElementById('racers')
+            volunteersList = document.getElementById('volunteers')
+
+            const lists = [racersList, volunteersList]
+
+            [].forEach.call(lists, function(list) {
+                list.addEventListener('dragenter', handleDragEnter, false)
+                list.addEventListener('dragleave', handleDragLeave, false)
+                list.addEventListener('drop', handleDrop, false)
+            })
+
+            racersList.addEventListener('dragover', handleDragOver, false)
+
+            const fieldsets = document.querySelectorAll('#racersField, #volunteersField')
+            [].forEach.call(fieldsets, function() {
+
+            })
+        }
+    </script>
+</head>
+<body>
+
+<p>Drag members to either the Racers or Volunteers list.</p>
+
+<ul id="members">
+    <li draggable="true" data-age="28">Brian Albers</li>
+    <li draggable="true" data-age="29">Albers</li>
+    <li draggable="true" data-age="30">Brian</li>
+    <li draggable="true" data-age="28">Frank</li>
+    <li draggable="true" data-age="18">John</li>
+</ul>
+
+
+<div class="dropList">
+    <fieldset id="racersField">
+        <legend>Racers (by Age):</legend>
+        <ul id="racers"></ul>
+    </fieldset>
+</div>
+
+<div class="dropList">
+    <fieldset id="volunteersField">
+        <legend>Volunteers (by Name):</legend>
+        <ul id="volunteers"></ul>
+    </fieldset>
+</div>
+
+</body>
+</html>

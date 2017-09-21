@@ -1,0 +1,17 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules"
+  ],
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "watch": [
+    "index.js",
+    "birds.js"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}
